@@ -17,12 +17,182 @@
 	<key>name</key>
 	<string>ecobee</string>
 	<key>objects</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>etemp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>loading</string>
+				<key>script</key>
+				<string>query=$1
+
+
+cd src
+python get_temps.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Show humidity and temp across all connected sensors</string>
+				<key>title</key>
+				<string>Show Temperatures</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7C1F506E-50D0-484C-9E7A-92BE4C064405</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>eauth</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd src
+python authorize.py "{query}"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Authorize the Alfred ecobee Plugin</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6EF52826-FF45-4717-80BD-EB373BCA631A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>edbg</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Debug Menu for Today</string>
+				<key>script</key>
+				<string>cd src
+python magic.py "{query}"
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Open debug menu</string>
+				<key>title</key>
+				<string>ecobee (debug)</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1B470C27-A71B-492C-B661-6A43B6621627</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
 	<key>readme</key>
-	<string>Alfred Ecobee</string>
+	<string>For this plugin to work you must authorize it with your ecobee.  This is a semi-annoying process and I'm not sure if you can actually authorize an app to run from more than one computer.
+
+Read the readme file at: https://github.com/jeeftor/alfredEcobee for more details</string>
 	<key>uidata</key>
-	<dict/>
+	<dict>
+		<key>1B470C27-A71B-492C-B661-6A43B6621627</key>
+		<dict>
+			<key>note</key>
+			<string>debug menu</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>6EF52826-FF45-4717-80BD-EB373BCA631A</key>
+		<dict>
+			<key>note</key>
+			<string>Use this action to authorize ecobee.  Make sure to read README 1st</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>7C1F506E-50D0-484C-9E7A-92BE4C064405</key>
+		<dict>
+			<key>note</key>
+			<string>Display temps on the ecobee sensors</string>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.2</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/jeeftor/alfredEcobee</string>
 </dict>
 </plist>
