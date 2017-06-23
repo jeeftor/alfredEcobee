@@ -16,8 +16,18 @@ def extract_capabilities(json):
 
 def main(wf):
 
+    if wf.stored_data('ACCESS_TOKEN') == None:
+        wf.add_item('Missing Access Token','Authorization has not completed correctly')
+        wf.send_feedback()
+        exit()
+
     e = Ecobee3()
     tdata = e.get_thermostats()
+
+    # Verify there is a token first
+
+
+
 
     # print json.dumps(tdata, indent=4, separators=(',', ': '))
 
@@ -44,4 +54,6 @@ def main(wf):
 
 if __name__ == u"__main__":
     wf = Workflow3()
+    log = wf.logger
+
     sys.exit(wf.run(main))
